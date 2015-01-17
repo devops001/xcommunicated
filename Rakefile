@@ -26,6 +26,12 @@ SRC.each { |f| file f => :setup }
 # Tasks:
 ####################################
 
+# TASK: tree:
+desc "Show the project layout"
+task :tree do
+	sh 'tree -I *.o\|bin*\|rapid*'
+end
+
 # TASK: setup:
 desc "Create directories: #{DIRS.join(', ')}"
 task :setup => DIRS
